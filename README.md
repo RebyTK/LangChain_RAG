@@ -41,18 +41,73 @@ Retrieval-Augmented Generation (RAG) demo built with LangChain. The system inges
 
 ## Prerequisites
 - Python 3.9+
-- [Ollama](https://ollama.com/download) installed locally
-  - After installation run: `ollama pull llama2`
-  - Start the service before querying: `ollama serve` (runs at `http://localhost:11434` by default)
+- Ollama installed locally (see installation instructions below)
+
+## Installing Ollama and Llama2
+
+### Step 1: Install Ollama
+
+Download and install Ollama from [https://ollama.com/download](https://ollama.com/download)
+
+**Windows:**
+1. Download the installer from the Ollama website
+2. Run the installer (`ollama-windows-amd64.exe`)
+3. Follow the installation wizard
+4. Ollama will start automatically after installation
+
+
+### Step 2: Download Llama2 Model
+
+After Ollama is installed, download the Llama2 model:
+
+```bash
+ollama pull llama2
+```
+
+This will download the Llama2 model (approximately 3.8GB). The download may take a few minutes depending on your internet connection.
+
+**Verify installation:**
+```bash
+ollama list
+```
+
+You should see `llama2` in the list of available models.
+
+### Step 3: Start Ollama Service
+
+Ollama runs as a background service. Make sure it's running before using the RAG system:
+
+**Windows:**
+- Ollama should start automatically after installation
+- If not, search for "Ollama" in the Start menu and launch it
+
+**macOS/Linux:**
+```bash
+ollama serve
+```
+
+The service will run at `http://localhost:11434` by default.
+
 
 ## Quick Start
-```bash
-# Clone the repository
-git clone <repo-url>
-cd LangChain_RAG
 
+### Step 1: Ensure Ollama is Running
+
+Before starting, make sure Ollama is installed and running (see [Installing Ollama and Llama2](#installing-ollama-and-llama2) section above).
+
+```bash
+# Verify Ollama is running
+curl http://localhost:11434/api/tags  # macOS/Linux
+# or open http://localhost:11434/api/tags in your browser (Windows)
+```
+
+### Step 2: Set Up Python Environment
+
+```bash
 # Create virtual environment
 python -m venv venv
+
+# Activate virtual environment
 venv\Scripts\activate  # Windows
 # or source venv/bin/activate on macOS/Linux
 
@@ -60,13 +115,6 @@ venv\Scripts\activate  # Windows
 cd rag_qa_system
 pip install -r requirements.txt
 ```
-
-### (Optional) Automated bootstrap
-```bash
-chmod +x setup.sh
-./setup.sh
-```
-The script verifies Python, creates the venv, installs dependencies, seeds `data/documents/` with sample files, and runs unit tests. It also reminds you to install/run Ollama.
 
 ## Adding Documents
 Place 10–20 public `.txt` or `.md` files inside `data/documents/`. You can reuse the seeded examples or delete them and substitute your own knowledge base. The `setup()` flow will reindex automatically the first time; use `force_reindex=True`, the CLI `reindex` command, or the Streamlit “Reindex” button after changing content.
