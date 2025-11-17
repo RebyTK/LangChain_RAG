@@ -1,0 +1,29 @@
+Python classes provide a way to bundle data and functionality together. Creating a new class creates a new type of object, allowing new instances of that type to be made.
+
+Basic class structure:
+class ClassName:
+    def __init__(self, parameters):
+        self.attribute = value
+    
+    def method(self):
+        return self.attribute
+
+Key concepts:
+- __init__: Constructor method called when creating an instance
+- self: Reference to the instance itself
+- Attributes: Variables that belong to the object
+- Methods: Functions that belong to the object
+- Inheritance: Classes can inherit from other classes
+- Encapsulation: Bundling data and methods that work on that data
+
+Example:
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    def bark(self):
+        return f"{self.name} says woof!"
+
+Python supports multiple inheritance, abstract base classes, and various object-oriented programming features.
+

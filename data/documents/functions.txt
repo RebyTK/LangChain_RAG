@@ -1,0 +1,28 @@
+Functions in Python are defined using the def keyword. They allow you to organize code into reusable blocks that perform specific tasks.
+
+Basic function syntax:
+def function_name(parameters):
+    """Optional docstring describing the function"""
+    # Function body
+    return value
+
+Key features:
+- Functions can take multiple parameters with default values
+- Functions can return multiple values as tuples
+- Functions are first-class objects (can be assigned, passed as arguments)
+- Functions can be nested (inner functions)
+- Functions support variable-length arguments (*args, **kwargs)
+
+Example with default parameters:
+def greet(name, greeting="Hello"):
+    return f"{greeting}, {name}!"
+
+Example with multiple return values:
+def divide(a, b):
+    quotient = a // b
+    remainder = a % b
+    return quotient, remainder
+
+Lambda functions provide a way to create small anonymous functions:
+square = lambda x: x ** 2
+

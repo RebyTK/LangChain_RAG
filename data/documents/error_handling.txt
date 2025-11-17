@@ -1,0 +1,37 @@
+Python provides robust error handling through try-except blocks. This allows programs to gracefully handle errors and continue execution.
+
+Basic syntax:
+try:
+    # Code that might raise an exception
+    result = 10 / 0
+except ZeroDivisionError:
+    # Handle the specific exception
+    print("Cannot divide by zero!")
+except Exception as e:
+    # Handle any other exception
+    print(f"An error occurred: {e}")
+else:
+    # Executes if no exception occurred
+    print("Operation successful")
+finally:
+    # Always executes, regardless of exceptions
+    print("Cleanup code here")
+
+Common exception types:
+- ValueError: Invalid value passed to function
+- TypeError: Operation on wrong type
+- KeyError: Dictionary key not found
+- IndexError: List index out of range
+- FileNotFoundError: File doesn't exist
+- ZeroDivisionError: Division by zero
+
+Raising exceptions:
+if age < 0:
+    raise ValueError("Age cannot be negative")
+
+Custom exceptions:
+class CustomError(Exception):
+    pass
+
+Proper error handling makes code more robust and user-friendly.
+

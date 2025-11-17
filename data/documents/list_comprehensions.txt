@@ -1,0 +1,16 @@
+List comprehensions provide a concise way to create lists in Python. They consist of brackets containing an expression followed by a for clause, then zero or more for or if clauses.
+
+Basic syntax: [expression for item in iterable]
+
+Examples:
+- squares = [x**2 for x in range(10)]
+- even_numbers = [x for x in range(20) if x % 2 == 0]
+- uppercase = [name.upper() for name in names]
+
+List comprehensions are generally more efficient and readable than equivalent for loops. They can also be nested for working with multi-dimensional data structures.
+
+Advanced example:
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+flattened = [num for row in matrix for num in row]
+# Result: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+

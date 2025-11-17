@@ -1,0 +1,31 @@
+Decorators in Python are a powerful feature that allows you to modify or enhance functions and methods without changing their source code. A decorator is essentially a function that takes another function as an argument and returns a new function.
+
+Syntax:
+@decorator_name
+def function_name():
+    pass
+
+Common use cases:
+- Logging function calls
+- Timing function execution
+- Access control and authentication
+- Caching/memoization
+- Input validation
+
+Example:
+def timer_decorator(func):
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print(f"{func.__name__} took {end-start:.2f} seconds")
+        return result
+    return wrapper
+
+@timer_decorator
+def slow_function():
+    time.sleep(1)
+    return "Done"
+
+Python also supports decorator chaining, where multiple decorators can be applied to a single function.
+

@@ -1,0 +1,25 @@
+Dictionaries in Python are unordered collections of key-value pairs. They are mutable, meaning you can add, remove, or modify items after creation.
+
+Creating dictionaries:
+- Using curly braces: my_dict = {"key": "value"}
+- Using dict() constructor: my_dict = dict(key="value")
+- Dictionary comprehension: {x: x**2 for x in range(5)}
+
+Common operations:
+- Accessing values: my_dict["key"] or my_dict.get("key", default)
+- Adding/updating: my_dict["new_key"] = "new_value"
+- Removing: del my_dict["key"] or my_dict.pop("key")
+- Checking existence: "key" in my_dict
+- Getting all keys: my_dict.keys()
+- Getting all values: my_dict.values()
+- Getting all items: my_dict.items()
+
+Dictionary methods:
+- .get(key, default): Safely get value with default
+- .update(other_dict): Merge another dictionary
+- .pop(key, default): Remove and return value
+- .clear(): Remove all items
+- .copy(): Create a shallow copy
+
+Dictionaries are highly efficient for lookups and are fundamental to Python programming.
+

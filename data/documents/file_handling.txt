@@ -1,0 +1,38 @@
+Python provides built-in functions for reading from and writing to files. File operations are essential for data persistence and processing.
+
+Opening files:
+file = open("filename.txt", "r")  # Read mode
+file = open("filename.txt", "w")  # Write mode (overwrites)
+file = open("filename.txt", "a")  # Append mode
+file = open("filename.txt", "r+") # Read and write
+
+Using context manager (recommended):
+with open("filename.txt", "r") as file:
+    content = file.read()
+    # File automatically closed when block exits
+
+Reading file contents:
+- file.read(): Read entire file as string
+- file.readline(): Read single line
+- file.readlines(): Read all lines as list
+- for line in file: Iterate over lines
+
+Writing to files:
+with open("output.txt", "w") as file:
+    file.write("Text to write\n")
+    file.writelines(["Line 1\n", "Line 2\n"])
+
+File modes:
+- "r": Read (default)
+- "w": Write (creates new or overwrites)
+- "a": Append
+- "x": Exclusive creation (fails if exists)
+- "b": Binary mode
+- "t": Text mode (default)
+
+Best practices:
+- Always use context managers (with statement)
+- Handle FileNotFoundError exceptions
+- Specify encoding for text files: open("file.txt", "r", encoding="utf-8")
+- Use pathlib.Path for modern path handling
+

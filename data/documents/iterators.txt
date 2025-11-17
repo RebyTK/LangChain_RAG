@@ -1,0 +1,44 @@
+Iterators in Python are objects that can be iterated upon. They implement the iterator protocol, which consists of __iter__() and __next__() methods.
+
+Creating iterators:
+class CountDown:
+    def __init__(self, start):
+        self.current = start
+    
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        if self.current <= 0:
+            raise StopIteration
+        self.current -= 1
+        return self.current + 1
+
+Iterables vs Iterators:
+- Iterable: Object that can return an iterator (has __iter__())
+- Iterator: Object that implements __next__() method
+
+Common iterables:
+- Lists, tuples, strings, dictionaries
+- File objects
+- Generator objects
+- Range objects
+
+Generators:
+Generators are a simple way to create iterators using functions with yield statements.
+
+def countdown(n):
+    while n > 0:
+        yield n
+        n -= 1
+
+Generator expressions:
+squares = (x**2 for x in range(10))
+
+Benefits of generators:
+- Memory efficient (lazy evaluation)
+- Can represent infinite sequences
+- Cleaner syntax than custom iterator classes
+
+The itertools module provides many useful iterator tools for complex iteration patterns.
+
